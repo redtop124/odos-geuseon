@@ -39,7 +39,7 @@
             transform: translateY(0);
         }
 
-        /* Navbar - Ενημερωμένο για μεγαλύτερη απόσταση */
+        /* Navbar */
         nav {
             position: fixed;
             top: 0;
@@ -76,6 +76,40 @@
             color: var(--secondary-color);
         }
 
+        /* Mobile Responsiveness Rules */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 15px 10px;
+                gap: 10px;
+            }
+            nav ul {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav .logo {
+                font-size: 22px;
+            }
+            nav ul li a {
+                font-size: 1rem;
+                padding: 5px;
+            }
+            #home h1 {
+                font-size: 2.8rem !important;
+            }
+            #home p {
+                font-size: 1.2rem !important;
+            }
+            .phone-number {
+                font-size: 2rem !important;
+                padding: 10px 20px !important;
+            }
+            .section-title {
+                font-size: 2.2rem !important;
+            }
+        }
+
         /* Hero Section */
         #home {
             height: 100vh;
@@ -98,6 +132,7 @@
             font-size: 1.5rem;
             margin-bottom: 30px;
             max-width: 700px;
+            padding: 0 15px;
             animation: fadeInUp 1s ease-out 0.5s both;
         }
         #home .cta-btn {
@@ -268,7 +303,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav>
         <a href="#home" class="logo">Οδός Γεύσεων</a>
         <ul>
@@ -279,14 +313,12 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home">
         <h1>Οδός Γεύσεων</h1>
         <p>Μεγάλη ποικιλία ποιοτικών, τοπικών και παραδοσιακών προϊόντων με άψογη εξυπηρέτηση.</p>
         <a href="#contact" class="cta-btn">Καλέστε μας τώρα</a>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery">
         <h2 class="section-title fade-in">Ο Χώρος & Τα Προϊόντα Μας</h2>
         <div class="gallery-grid">
@@ -299,36 +331,30 @@
         </div>
     </section>
 
-    <!-- Reviews Section -->
     <section id="reviews" style="max-width: 100%;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title fade-in">Τι Λένε Για Εμάς</h2>
             <div class="testimonials-container fade-in">
-                <!-- Review 1 -->
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"Εξαιρετικό μαγαζί, άψογη εξυπηρέτηση, πεντακάθαρο και με μεγάλη ποικιλία σε τοπικά παραδοσιακά προϊόντα!"</p>
                     <div class="reviewer">— Ελευθερια Πατσιουρα</div>
                 </div>
-                <!-- Review 2 -->
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"Φοβερός επαγγελματίας. Διαθέτει μεγάλη ποικιλία ποιοτικών προϊόντων σε πολύ καλές τιμές."</p>
                     <div class="reviewer">— ΒΑΣΙΛΙΚΗ ΔΑΓΚΛΗ</div>
                 </div>
-                <!-- Review 3 -->
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"Πολύ καλές τιμές, πολύ ευγενικό προσωπικό, μεγάλη ποικιλία ελληνικών προϊόντων, σε συνδυασμό πάντα με υψηλή ποιότητα."</p>
                     <div class="reviewer">— Gigi</div>
                 </div>
-                <!-- Review 4 -->
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"Μεγάλη ποικιλία προϊόντων βγαλμένα από την Ελληνική παράδοση. Ευγενέστατο προσωπικό. Τιμές λογικές."</p>
                     <div class="reviewer">— Ανώνυμος Πελάτης</div>
                 </div>
-                <!-- Review 5 -->
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"Μέγιστη ποικιλία και τρομερή εξυπηρέτηση. Προτείνεται ανεπιφύλακτα!"</p>
@@ -338,7 +364,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" style="max-width: 100%;">
         <div style="max-width: 1200px; margin: 0 auto;" class="fade-in">
             <h2 class="section-title">Επικοινωνία</h2>
@@ -353,12 +378,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Οδός Γεύσεων. Με επιφύλαξη παντός δικαιώματος.</p>
+        <p>© 2026 Οδός Γεύσεων. Με επιφύλαξη παντός δικαιώματος.</p>
     </footer>
 
-    <!-- JavaScript for Animations -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const observer = new IntersectionObserver((entries) => {
