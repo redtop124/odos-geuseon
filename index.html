@@ -108,6 +108,14 @@
             .section-title {
                 font-size: 2.2rem !important;
             }
+            .slider-wrapper {
+                padding: 0 20px !important;
+            }
+            .slider-btn {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 1rem !important;
+            }
         }
 
         /* Hero Section */
@@ -205,19 +213,53 @@
             transform: scale(1.1);
         }
 
-        /* Testimonials */
+        /* Testimonials Slider Wrapper */
         #reviews {
             background-color: #f9f9f9;
             padding-bottom: 100px;
+        }
+        .slider-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0 50px; /* Space for the arrows */
+        }
+        .slider-btn {
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .slider-btn:hover {
+            background: var(--secondary-color);
+            transform: scale(1.1);
+        }
+        .slider-btn.prev {
+            left: 0;
+        }
+        .slider-btn.next {
+            right: 0;
         }
         .testimonials-container {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 30px;
-            padding-bottom: 20px;
+            padding: 20px 0;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            width: 100%;
         }
         .testimonials-container::-webkit-scrollbar {
             display: none;
@@ -334,33 +376,41 @@
     <section id="reviews" style="max-width: 100%;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title fade-in">Τι Λένε Για Εμάς</h2>
-            <div class="testimonials-container fade-in">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Εξαιρετικό μαγαζί, άψογη εξυπηρέτηση, πεντακάθαρο και με μεγάλη ποικιλία σε τοπικά παραδοσιακά προϊόντα!"</p>
-                    <div class="reviewer">— Ελευθερια Πατσιουρα</div>
+            
+            <div class="slider-wrapper fade-in">
+                <button class="slider-btn prev" id="prevBtn">&#10094;</button>
+                
+                <div class="testimonials-container" id="testiContainer">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Εξαιρετικό μαγαζί, άψογη εξυπηρέτηση, πεντακάθαρο και με μεγάλη ποικιλία σε τοπικά παραδοσιακά προϊόντα!"</p>
+                        <div class="reviewer">— Ελευθερια Πατσιουρα</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Φοβερός επαγγελματίας. Διαθέτει μεγάλη ποικιλία ποιοτικών προϊόντων σε πολύ καλές τιμές."</p>
+                        <div class="reviewer">— ΒΑΣΙΛΙΚΗ ΔΑΓΚΛΗ</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Πολύ καλές τιμές, πολύ ευγενικό προσωπικό, μεγάλη ποικιλία ελληνικών προϊόντων, σε συνδυασμό πάντα με υψηλή ποιότητα."</p>
+                        <div class="reviewer">— Gigi</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Μεγάλη ποικιλία προϊόντων βγαλμένα από την Ελληνική παράδοση. Ευγενέστατο προσωπικό. Τιμές λογικές."</p>
+                        <div class="reviewer">— Ανώνυμος Πελάτης</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Μέγιστη ποικιλία και τρομερή εξυπηρέτηση. Προτείνεται ανεπιφύλακτα!"</p>
+                        <div class="reviewer">— Ανώνυμος Πελάτης</div>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Φοβερός επαγγελματίας. Διαθέτει μεγάλη ποικιλία ποιοτικών προϊόντων σε πολύ καλές τιμές."</p>
-                    <div class="reviewer">— ΒΑΣΙΛΙΚΗ ΔΑΓΚΛΗ</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Πολύ καλές τιμές, πολύ ευγενικό προσωπικό, μεγάλη ποικιλία ελληνικών προϊόντων, σε συνδυασμό πάντα με υψηλή ποιότητα."</p>
-                    <div class="reviewer">— Gigi</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Μεγάλη ποικιλία προϊόντων βγαλμένα από την Ελληνική παράδοση. Ευγενέστατο προσωπικό. Τιμές λογικές."</p>
-                    <div class="reviewer">— Ανώνυμος Πελάτης</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Μέγιστη ποικιλία και τρομερή εξυπηρέτηση. Προτείνεται ανεπιφύλακτα!"</p>
-                    <div class="reviewer">— Ανώνυμος Πελάτης</div>
-                </div>
+
+                <button class="slider-btn next" id="nextBtn">&#10095;</button>
             </div>
+            
         </div>
     </section>
 
@@ -384,6 +434,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Fade-in animation logic
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -396,6 +447,22 @@
 
             document.querySelectorAll('.fade-in').forEach((el) => {
                 observer.observe(el);
+            });
+
+            // Slider Logic
+            const testiContainer = document.getElementById('testiContainer');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            // Scroll amount equals roughly the width of one card + the gap (320px + 30px)
+            const scrollAmount = 350;
+
+            prevBtn.addEventListener('click', () => {
+                testiContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                testiContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
             });
         });
     </script>
